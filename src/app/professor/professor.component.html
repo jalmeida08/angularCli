@@ -1,0 +1,16 @@
+<table class=" table table-hover">
+    <thead>
+        <tr>
+            <th>Primeiro nome</th>
+            <th>Segundo nome</th>
+            <th>Primeiro Nome</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let p of professor">
+            <td >{{p.primeiroNome}}</td>
+            <td >{{p.segundoNome}}</td>
+        </tr>
+    </tbody>
+</table>
+<a [routerLink]="['/professor/cadastro']"  class="btn btn-primary">Voltar</a>
