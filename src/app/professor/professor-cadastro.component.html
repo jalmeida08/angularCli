@@ -1,2 +1,17 @@
+<div class="col-md-6">
+    <form (submit)="salvar($event)">
+        <div class="form-group">
+            <label for="primeiroNome">Primeiro nome:</label>
+            <input [(ngModel)]="professor.primeiroNome"name="primeiroNome" class="form-control" />
+        </div>
+        <div class="form-group">
+                <label for="segundoNome">Segundo nome:</label>
+                <input [(ngModel)]="professor.segundoNome"  name="segundoNome" class="form-control" />
+            </div>
+            <button type="submit" class="btn btn-success">Salvar</button>
+    </form>
+</div>
+
+
 <h1> cadastrar professor</h1>
 <a [routerLink]="['/professor']" class="btn btn-primary">Voltar</a>
