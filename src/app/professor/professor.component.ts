@@ -11,6 +11,7 @@ import { Professor } from "../model/professor";
 
 export class ProfessorComponent{
     service : ProfessorService;
+    mensagem : string;
     professor : Professor[];
 
     constructor(http : Http, service : ProfessorService,){
@@ -33,7 +34,7 @@ export class ProfessorComponent{
                     console.log("sucesso: " + res);
                 },
                     erro => {console.log("ERRO: " + erro)
-                }); 
+                });
         }
         
 
