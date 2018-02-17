@@ -3,13 +3,14 @@
         <tr>
             <th>Primeiro nome</th>
             <th>Segundo nome</th>
-            <th>Primeiro Nome</th>
+            <th>Segundo nome</th>
         </tr>
     </thead>
     <tbody>
         <tr *ngFor="let p of professor">
             <td >{{p.primeiroNome}}</td>
             <td >{{p.segundoNome}}</td>
+            <td><a (click)="remover(p)">Excluir</a></td>
         </tr>
     </tbody>
 </table>

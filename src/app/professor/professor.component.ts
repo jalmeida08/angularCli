@@ -11,7 +11,7 @@ import { Professor } from "../model/professor";
 
 export class ProfessorComponent{
     service : ProfessorService;
-    professor : Professor;
+    professor : Professor[];
 
     constructor(http : Http, service : ProfessorService,){
         this.service = service;
@@ -19,4 +19,23 @@ export class ProfessorComponent{
         this.service.listar()
             .subscribe(res => {this.professor = res,console.log(this.professor)}, erro => {console.log("Este é o erro: " + erro)})    
     }
+
+    public remover (professor : Professor){
+        
+            
+            this.service
+                .remover(professor)
+                .subscribe(res => {
+                    let novaLista = this.professor.slice(0);
+                    let indice = novaLista.indexOf(professor);
+                    novaLista.splice(indice, 1);
+                    this.professor = novaLista;
+                    console.log("sucesso: " + res);
+                },
+                    erro => {console.log("ERRO: " + erro)
+                }); 
+        }
+        
+
+        
 } 
