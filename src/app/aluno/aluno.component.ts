@@ -20,8 +20,7 @@ export class AlunoComponent{
         this.service
             .listar()
             .subscribe(res => {
-                this.aluno = res,
-                console.log(this.aluno)
+                this.aluno = res
             }, erro => {
                 console.log("erro: "+ erro)
             })
@@ -42,6 +41,8 @@ export class AlunoComponent{
             });
        }
     }
+
+    
 
 
 }

@@ -19,8 +19,7 @@ export class ProfessorComponent{
 
         this.service.listar()
             .subscribe(res => {
-                this.professor = res,
-                console.log(this.professor)
+                this.professor = res
             }, erro => {
                 console.log("Este é o erro: " + erro)
             }); 
@@ -37,7 +36,6 @@ export class ProfessorComponent{
                         novaLista.splice(indice, 1);
                         this.professor = novaLista;
                         this.mensagem = "Removida com sucesso";
-                        console.log("sucesso: " + res);
                     },
                         erro => {console.log("ERRO: " + erro)
                     });

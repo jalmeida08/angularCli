@@ -5,7 +5,6 @@ import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { ProfessorModule } from './professor/professor.module';
-import { ProfessorCadastroModule } from './professor/professor-cadastro.module';
 import { routing } from './app.routes';
 import 'rxjs/Rx';
 import { ProfessorComponent } from './professor/professor.component';
@@ -29,7 +28,6 @@ import { AlunoCadastroComponent } from './aluno/aluno-cadastro.component';
     HttpModule,
     FormsModule,
     ProfessorModule,
-    ProfessorCadastroModule,
     AlunoModule
   ],
   providers: [],

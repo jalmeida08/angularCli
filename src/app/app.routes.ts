@@ -7,8 +7,10 @@ import { AlunoCadastroComponent } from "./aluno/aluno-cadastro.component";
 const appRoutes : Routes = [
     {path : "professor", component : ProfessorComponent},
     {path : "professor/cadastro", component : ProfessorCadastroComponent},
+    {path : "professor/cadastro/:id", component : ProfessorCadastroComponent},
     {path : "aluno", component : AlunoComponent},
     {path : "aluno/cadastro", component : AlunoCadastroComponent},
+    {path : "aluno/cadastro/:id", component : AlunoCadastroComponent},
     { path: '**', redirectTo: 'professor'}
 ];
 

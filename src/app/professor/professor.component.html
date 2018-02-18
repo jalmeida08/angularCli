@@ -4,17 +4,18 @@
         <tr>
             <th>Primeiro nome</th>
             <th>Segundo nome</th>
-            <th>Segundo nome</th>
+            <th>#</th>
         </tr>
     </thead>
     <tbody>
         <tr *ngFor="let p of professor">
-            <td >{{p.primeiroNome}}</td>
-            <td >{{p.segundoNome}}</td>
-            <td><a (click)="remover(p)" class="btn btn-danger">Excluir</a></td>
-            
+            <td>{{p.primeiroNome}}</td>
+            <td>{{p.segundoNome}}</td>
+            <td>
+                <a (click)="remover(p)" class="btn btn-danger">Excluir</a>
+                <a [routerLink]="['/professor/cadastro', p.id]" class="btn btn-primary" >Editar</a>
+            </td>
+
         </tr>
     </tbody>
 </table>
-<a [routerLink]="['/professor/cadastro']"  class="btn btn-primary">professor Cadastro</a>
-<a [routerLink]="['/aluno']" class="btn btn-primary">Aluno</a>

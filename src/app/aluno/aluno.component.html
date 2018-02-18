@@ -1,17 +1,19 @@
 <table class="table table-hover">
     <thead>
-        <tr>
+        <tr class="text-center">
             <th>Nome</th>
             <th>Sobrenome</th>
+            <th>#</th>
         </tr>
     </thead>
     <tbody>
         <tr *ngFor="let a of aluno">
             <td>{{a.primeiroNome}}</td>
             <td>{{a.segundoNome}}</td>
-            <td><a (click)="remover(a)"  class="btn btn-danger">Excluir</a></td>
+            <td>
+                <a (click)="remover(a)" class="btn btn-danger">Excluir</a>
+                <a [routerLink]="['/aluno/cadastro', a.id]" class="btn btn-primary text-write">Editar</a>
+            </td>
         </tr>
     </tbody>
 </table>
-<a [routerLink]="['/professor']" class="btn btn-primary">Professor</a>
-<a [routerLink]="['/professor/cadastro']" class="btn btn-primary">Professor cadastro</a>
