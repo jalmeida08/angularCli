@@ -1,3 +1,4 @@
+<div class="alert alert-success" *ngIf="mensagem">{{mensagem}}</div>
 <table class=" table table-hover">
     <thead>
         <tr>
@@ -10,7 +11,7 @@
         <tr *ngFor="let p of professor">
             <td >{{p.primeiroNome}}</td>
             <td >{{p.segundoNome}}</td>
-            <td><a (click)="remover(p)">Excluir</a></td>
+            <td><a  class="btn btn-danger" (click)="remover(p)">Excluir</a></td>
         </tr>
     </tbody>
 </table>

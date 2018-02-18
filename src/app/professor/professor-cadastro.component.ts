@@ -12,6 +12,7 @@ export class ProfessorCadastroComponent{
     
     professor : Professor = new Professor();
     service : ProfessorService;
+    mensagem : string;
 
     constructor(service : ProfessorService){
         this.service = service;
@@ -25,7 +26,7 @@ export class ProfessorCadastroComponent{
         this.service
             .salvar(this.professor)
             .subscribe(res => {
-                    console.log("Professor salvo com sucesso: " + res),
+                    this.mensagem = "Professor salvo com sucesso",
                     this.professor = new Professor()
                 },erro=> {
                     console.log("Este é o erro: "+ erro)});
