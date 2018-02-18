@@ -24,8 +24,14 @@ export class AlunoService{
     public salvar(aluno : Aluno) : Observable<Response> {
         this._headers.append("Content-Type", "APPLICATION/JSON");
 
-        return this._http
-            .post(this._url, JSON.stringify(aluno), {headers : this._headers})
+        if(aluno.id){
+            return this._http
+                .put(this._url + aluno.id, JSON.stringify(aluno), {headers : this._headers});
+        }else{
+            return this._http
+                .post(this._url, JSON.stringify(aluno), {headers : this._headers})
+        }
+        
     }
     
     public remover(aluno : Aluno) : Observable<Response> {

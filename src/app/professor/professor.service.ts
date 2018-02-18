@@ -16,12 +16,18 @@ export class ProfessorService {
         this._http = http;
 
     }
-    
+
     public salvar(professor: Professor): Observable<Response> {
         this._headers = new Headers();
         this._headers.append("Content-Type", "application/json");
-        return this._http
-            .post(this._url, JSON.stringify(professor), { headers: this._headers });
+
+        if (professor.id) {
+            return this._http
+                .post(this._url, JSON.stringify(professor), { headers: this._headers });
+        }else{
+            return this._http
+                .put(this._url + professor.id, JSON.stringify(professor), {headers : this._headers})
+        }
     }
 
     public listar(): Observable<Professor[]> {
@@ -29,7 +35,7 @@ export class ProfessorService {
             .get(this._url)
             .map(res => res.json());
     }
-    
+
     public buscarPorId(id: number): Observable<Professor> {
         return this._http
             .get(this._url + id)
