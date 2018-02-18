@@ -3,4 +3,5 @@ import {Turma} from "./turma";
 
 export class Aluno extends Pessoa{
         
+    turma : Turma[];
 }

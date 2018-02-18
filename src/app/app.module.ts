@@ -11,12 +11,15 @@ import 'rxjs/Rx';
 import { ProfessorComponent } from './professor/professor.component';
 import { ProfessorService } from './professor/professor.service';
 import { ProfessorCadastroComponent } from './professor/professor-cadastro.component';
+import {AlunoComponent} from "./aluno/aluno.component";
+import { AlunoModule } from './aluno/aluno.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     ProfessorCadastroComponent,
     ProfessorComponent,
+    AlunoComponent
   ],
   imports: [
     BrowserModule,
@@ -25,6 +28,7 @@ import { ProfessorCadastroComponent } from './professor/professor-cadastro.compo
     FormsModule,
     ProfessorModule,
     ProfessorCadastroModule,
+    AlunoModule
   ],
   providers: [],
   bootstrap: [AppComponent]
