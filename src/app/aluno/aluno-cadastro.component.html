@@ -1,0 +1,15 @@
+<h1>ALUNO CADASTRO</h1>
+<div class="col-md-6">
+    <div class="alert alert-success" *ngIf="mensagem" >{{mensagem}}</div>
+    <form method="POST" (submit)="salvar($event)">
+        <div class="form-group">
+            <label  for="primeiroNome">Primeiro nome</label>
+            <input [(ngModel)]="aluno.primeiroNome" name="primeiroNome" id="primeiroNome" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label for="segundoNome">Segundo nome</label>
+            <input [(ngModel)]="aluno.segundoNome" name="segundoNome" id="segundoNome" class="form-control" />
+        </div>
+        <button type="submit" class="btn btn-primary">Salvar</button>
+    </form>
+</div>

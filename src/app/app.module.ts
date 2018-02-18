@@ -13,13 +13,15 @@ import { ProfessorService } from './professor/professor.service';
 import { ProfessorCadastroComponent } from './professor/professor-cadastro.component';
 import {AlunoComponent} from "./aluno/aluno.component";
 import { AlunoModule } from './aluno/aluno.module';
+import { AlunoCadastroComponent } from './aluno/aluno-cadastro.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ProfessorCadastroComponent,
     ProfessorComponent,
-    AlunoComponent
+    AlunoComponent,
+    AlunoCadastroComponent,
   ],
   imports: [
     BrowserModule,
