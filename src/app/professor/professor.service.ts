@@ -4,7 +4,6 @@ import { Professor } from "../model/professor";
 import { Observable } from "rxjs/Observable";
 import { Response } from "@angular/http/src/static_response";
 
-
 @Injectable()
 export class ProfessorService {
 
@@ -14,7 +13,6 @@ export class ProfessorService {
 
     constructor(http: Http) {
         this._http = http;
-
     }
 
     public salvar(professor: Professor): Observable<Response> {
@@ -22,11 +20,13 @@ export class ProfessorService {
         this._headers.append("Content-Type", "application/json");
 
         if (professor.id) {
+            professor.turma = [];
+            
+            return this._http
+                .put(this._url, JSON.stringify(professor), { headers: this._headers })
+        } else {
             return this._http
                 .post(this._url, JSON.stringify(professor), { headers: this._headers });
-        }else{
-            return this._http
-                .put(this._url + professor.id, JSON.stringify(professor), {headers : this._headers})
         }
     }
 

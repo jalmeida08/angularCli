@@ -5,41 +5,44 @@ import { Observable } from "rxjs/Observable";
 import { Response } from "@angular/http/src/static_response";
 
 @Injectable()
-export class AlunoService{
+export class AlunoService {
 
-    private _http : Http;
-    private  _headers : Headers = new Headers();;
-    private _url : string = "http://localhost:8080/aluno/";
+    private _http: Http;
+    private _headers: Headers;
+    private _url: string = "http://localhost:8080/aluno/";
 
-    constructor(http : Http){
+    constructor(http: Http) {
         this._http = http;
     }
 
-    public listar() : Observable<Aluno[]>{
-        return  this._http
-            .get(this._url)
-            .map( res => res.json());
-    }
-
-    public salvar(aluno : Aluno) : Observable<Response> {
+    public salvar(aluno: Aluno): Observable<Response> {
+        this._headers = new Headers();
         this._headers.append("Content-Type", "APPLICATION/JSON");
 
-        if(aluno.id){
+        if (aluno.id) {
+            aluno.turma = [];
             return this._http
-                .put(this._url + aluno.id, JSON.stringify(aluno), {headers : this._headers});
-        }else{
+                .put(this._url, JSON.stringify(aluno), { headers: this._headers });
+        } else {
             return this._http
-                .post(this._url, JSON.stringify(aluno), {headers : this._headers})
+                .post(this._url, JSON.stringify(aluno), { headers: this._headers })
         }
-        
+
     }
-    
-    public remover(aluno : Aluno) : Observable<Response> {
+
+    public listar(): Observable<Aluno[]> {
+        return this._http
+            .get(this._url)
+            .map(res => res.json());
+    }
+
+
+    public remover(aluno: Aluno): Observable<Response> {
         return this._http
             .delete(this._url + aluno.id)
     }
 
-    public buscarPorId(id : number) : Observable<Aluno> {
+    public buscarPorId(id: number): Observable<Aluno> {
         return this._http
             .get(this._url + id)
             .map(res => res.json());
