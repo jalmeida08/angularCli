@@ -1,5 +1,5 @@
 import {Injectable} from "@angular/core";
-import {Http} from "@nagular/http";
+import {Http} from "@angular/http";
 @Injectable()
 export class CursoService{
 
