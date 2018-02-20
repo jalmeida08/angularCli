@@ -13,6 +13,8 @@ import { ProfessorCadastroComponent } from './professor/professor-cadastro.compo
 import {AlunoComponent} from "./aluno/aluno.component";
 import { AlunoModule } from './aluno/aluno.module';
 import { AlunoCadastroComponent } from './aluno/aluno-cadastro.component';
+import { CursoComponent } from './curso/curso.component';
+import { CursoModule } from './curso/curso.module';
 
 @NgModule({
   declarations: [
@@ -21,6 +23,7 @@ import { AlunoCadastroComponent } from './aluno/aluno-cadastro.component';
     ProfessorComponent,
     AlunoComponent,
     AlunoCadastroComponent,
+    CursoComponent
   ],
   imports: [
     BrowserModule,
@@ -28,7 +31,8 @@ import { AlunoCadastroComponent } from './aluno/aluno-cadastro.component';
     HttpModule,
     FormsModule,
     ProfessorModule,
-    AlunoModule
+    AlunoModule,
+    CursoModule
   ],
   providers: [],
   bootstrap: [AppComponent]
